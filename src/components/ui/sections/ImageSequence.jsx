@@ -32,8 +32,8 @@ export default function ImageSequence() {
       canvas.current.height = viewportSize.height;
 
       const imageSrcs = Array.from(
-        { length: 60 },
-        (_, i) => `/images/bottle2/${String(i + 1).padStart(4, "0")}.png`
+        { length: 61 },
+        (_, i) => `/images/bottle3/${String(i + 1).padStart(4, "0")}.jpg`
       );
 
       const images = await loadImagesAndDrawFirstFrame({

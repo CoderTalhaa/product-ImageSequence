@@ -4,7 +4,13 @@ import Page1 from "@/components/ui/sections/Page1";
 import { useProgress } from "@react-three/drei";
 import { AnimatePresence } from "framer-motion";
 import Lenis from "lenis";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, {
+  Suspense,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import ImageSequence from "@/components/ui/sections/ImageSequence";
 
 export default function Home() {
@@ -49,7 +55,9 @@ export default function Home() {
         {isloading && <LoadingScreen progress={progress} />}
       </AnimatePresence>
       <main className="w-full">
-        <ImageSequence />
+        <Suspense fallback={null}>
+          <ImageSequence />
+        </Suspense>
 
         <div className="relative h-[10vh]"></div>
         <Page1 />
